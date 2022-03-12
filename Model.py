@@ -1,5 +1,5 @@
 import math
-from ursina import Entity
+from ursina import Entity, held_keys, time, camera
 from ursina import color as urs_color
 
 
@@ -67,4 +67,22 @@ class Planet(Entity):
         self.x_pos += self.x_pos_vel * self.TIMESTEP
         self.y_pos += self.y_pos_vel * self.TIMESTEP
         self.orbit.append((self.x_pos, self.y_pos))
-        
+
+
+class User(Entity):
+    speed = 10
+
+    def __init__(self):
+        super().__init__()
+    
+    def update(self):
+        self.x += held_keys['d'] * time.dt * self.speed
+        self.x -= held_keys['a'] * time.dt * self.speed
+        self.z += held_keys['w'] * time.dt * self.speed
+        self.z -= held_keys['s'] * time.dt * self.speed
+        camera.x = self.x
+        camera.z = self.z
+
+        self.rotation_y += held_keys['l'] * time.dt * self.speed * 10
+        self.rotation_y -= held_keys['j'] * time.dt * self.speed * 10
+        camera.rotation_y = self.rotation_y

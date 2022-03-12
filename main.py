@@ -1,6 +1,6 @@
 from xml.dom.minidom import Entity
 import ursina
-from Model import Planet
+from Model import Planet, User
 
 WIDTH, HEIGHT = 800, 800
 FPS = 60
@@ -9,9 +9,6 @@ YELLOW = (255, 255, 0)
 BLUE = (100, 149, 237)
 RED = (188, 29, 50)
 DARK_GREY = (80, 78, 81)
-
-
-
 
 
 
@@ -43,6 +40,7 @@ planets = [sun, earth, mars, mercury, venus]
 # ursina.camera.position = (0, 3, 0)
 # ursina.camera.rotation_y = 90
 ursina.PointLight(y=5)
+player = User()
 
 app.run()
 
