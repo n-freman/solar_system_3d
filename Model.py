@@ -8,7 +8,7 @@ class Planet(Entity):
     G = 6.47428e-11
     SCALE = 3 / AU
     # TIMESTEP here is equal to one day
-    TIMESTEP = 3600 * 2
+    TIMESTEP = 3600 * 24
     
 
     def __init__(self, x, y, radius, color, mass):

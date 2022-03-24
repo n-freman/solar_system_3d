@@ -37,13 +37,7 @@ venus = Planet(0.723*Planet.AU, 0, 14, WHITE, 4.8685*10**24)
 venus.y_vel = -35.02 * 10**3
 
 planets = [sun, earth, mars, mercury, venus]
-# ursina.camera.position = (0, 3, 0)
-# ursina.camera.rotation_y = 90
 ursina.PointLight(y=5)
-player = User()
+# player = User()
 
 app.run()
-
-    
-
-print(int(input()) + int(input()))
